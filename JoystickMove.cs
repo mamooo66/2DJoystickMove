@@ -16,5 +16,10 @@ public class player : MonoBehaviour {
     }
     private void FixedUpdate() {
         rb.velocity = new Vector2(dirX, dirY);
+        movement = new Vector2(dirX,dirY);
+        if(movement != Vector2.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(Vector3.back,movement);
+        }
     }
 }
